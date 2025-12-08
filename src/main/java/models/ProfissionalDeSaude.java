@@ -24,13 +24,13 @@ public class ProfissionalDeSaude {
     @OneToMany(mappedBy = "profissionalDeSaude")
     private List<Prescricao> prescricoes;
 
-    @OneToMany(mappedBy = "profissional")
+    @OneToMany(mappedBy = "profissionalDeSaude")
     private List<Consulta> consultas;
 
-    @OneToMany(mappedBy = "profissional")
+    @OneToMany(mappedBy = "profissionalDeSaude")
     private List<Internacao> internacoes;
 
-    @OneToMany(mappedBy = "profissional")
+    @OneToMany(mappedBy = "profissionalDeSaude")
     private List<AgendaEvento> agendaEventos;
 
     private String nome;
