@@ -4,6 +4,7 @@ import models.Agenda;
 import repository.AgendaRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AgendaService {
@@ -18,8 +19,8 @@ public class AgendaService {
         return agendaRepository.findAll();
     }
 
-    public Agenda findById(Long id) {
-        return agendaRepository.findById(id).orElse(null);
+   public Optional<Agenda> findById(Long id) {
+        return agendaRepository.findById(id);
     }
 
     public Agenda create(Agenda agenda) {
