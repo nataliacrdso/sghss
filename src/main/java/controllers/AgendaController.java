@@ -31,7 +31,7 @@ public class AgendaController {
 
     @PostMapping
     public Agenda create(@RequestBody Agenda agenda) {
-        return agendaService.save(agenda);
+        return agendaService.create(agenda);
     }
 
     @PutMapping("/{id}")
@@ -39,7 +39,7 @@ public class AgendaController {
         return agendaService.findById(id)
                 .map(existing -> {
                     agenda.setId(id);
-                    return ResponseEntity.ok(agendaService.save(agenda));
+                    return ResponseEntity.ok(agendaService.create(agenda));
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
